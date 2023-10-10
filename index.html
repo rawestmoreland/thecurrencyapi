@@ -24,7 +24,7 @@
     fetch('https://currency-alerter-api.fly.dev/latest/pair?primary=usd&secondary=eur')
       .then(res => res.json())
       .then(json => {
-        document.getElementById('currency').textContent = `1 USD is worth ${json.ratio} EUR`;
+        document.getElementById('currency').textContent = `1 USD = ${json.ratio} EUR`;
       });
   </script>
 </html>
