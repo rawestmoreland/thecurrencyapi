@@ -7,17 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Is Beto O'Rourke the Governor of the State of Texas?"
+      content="How many Euros is one US Dollar worth?"
     />
     <meta
       property="og:title"
-      content="Is Beto O'Rourke the Governor of the State of Texas?"
+      content="How many Euros is one US Dollar worth?"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.isbetogovernor.com" />
-    <title>Is Beto Governor</title>
+    <meta property="og:url" content="https://thecurrencyapi.com" />
+    <title>Euro for a Dollar</title>
   </head>
   <body>
-    <h1 class="main">NO</h1>
+    <h1 class="main" id="currency">NO</h1>
   </body>
+  <script>
+    fetch('https://currency-alerter-api.fly.dev/latest/pair?primary=usd&secondary=eur')
+      .then(res => res.json())
+      .then(json => {
+        document.getElementById('currency').textContent = `1 USD is worth ${json.ratio} EUR`;
+      });
+  </script>
 </html>
